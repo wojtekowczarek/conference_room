@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Main Page View
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for room in rooms %}
+        <li>
+            <p>{{ room.number }}. {{ room.name }}</p>
+            <a href="room/{{ room.id }}"><button>Show Details</button></a>
+        </li>
+        {% endfor %}
+    </ul>
+
+<p><a href="room/new"><button>Add New Room</button></a></p>
+<p><a href="reservation"><button>Book a Conference</button></a></p>
+{% endblock %}

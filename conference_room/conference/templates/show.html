@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Show Room View
+{% endblock %}
+
+{% block content %}
+
+<h2>Room Details</h2>
+
+<ul>
+    {% if rooms.id == room_id %}
+        <li>
+            <p>Room: {{ room.number }}. {{room.name }}</p>
+            <p>Description: {{ room.description }}</p>
+            <p>Taken: {{ room.get_taken_display }}</p>
+            <p><a href="modify/{{ room.id }}"><button>Modify</button></a></p>
+            <p><a href="delete/{{ room.id }}"><button>Delete</button></a></p>
+        </li>
+    {% endif %}
+</ul>
+{% endblock %}
